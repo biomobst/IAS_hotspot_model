@@ -1,7 +1,7 @@
 ## This folder contains the links to the input data
 
 ### Target species list
-https://github.com/biomobst/IAS_model/blob/master/scripts/IASmodelling_speciesList_20200107.csv
+https://github.com/biomobst/IAS_model/blob/master/input%20data/IASmodelling_speciesList_20200107.csv
 
 ### Occurence records
 https://github.com/biomobst/IAS_model/tree/master/results/Training%20points
