@@ -1,0 +1,14 @@
+gbifID;scientificName;occurrenceStatus;decimalLatitude;decimalLongitude;coordinateUncertaintyInMeters;depth;depthAccuracy;eventDate
+1829157500;Neogobius melanostomus (Pallas, 1814);absent;41.8076;-82.5976;;9;0;2005-06-13T00:00:00Z
+1829172059;Neogobius melanostomus (Pallas, 1814);absent;43.9;-78.1598;;45;0;2015-10-05T00:00:00Z
+1829175442;Neogobius melanostomus (Pallas, 1814);absent;44.4882;-86.3324;;73;0;2009-04-17T00:00:00Z
+1829163894;Neogobius melanostomus (Pallas, 1814);absent;44.4987;-86.3389;;110;0;2009-04-19T00:00:00Z
+1829203841;Neogobius melanostomus (Pallas, 1814);absent;44.5146;-86.3394;;127;0;2009-04-17T00:00:00Z
+1829183916;Neogobius melanostomus (Pallas, 1814);absent;44.9748;-83.2777;;18;0;2001-04-26T00:00:00Z
+1829257746;Neogobius melanostomus (Pallas, 1814);absent;45.5877;-85.9757;;9.3;0;2016-06-15T00:00:00Z
+1829257528;Neogobius melanostomus (Pallas, 1814);absent;45.5962;-85.9663;;8.7;0;2016-06-15T00:00:00Z
+1829256600;Neogobius melanostomus (Pallas, 1814);absent;45.5997;-85.9615;;16.5;0;2016-06-15T00:00:00Z
+1829256633;Neogobius melanostomus (Pallas, 1814);absent;45.6019;-85.9662;;12.9;0;2016-06-15T00:00:00Z
+1829258308;Neogobius melanostomus (Pallas, 1814);absent;45.6414;-85.7884;;7.4;0;2016-06-17T00:00:00Z
+1829258191;Neogobius melanostomus (Pallas, 1814);absent;45.6451;-85.7914;;5.7;0;2016-06-17T00:00:00Z
+1829184274;Neogobius melanostomus (Pallas, 1814);absent;45.7184;-84.574;;39;0;2004-04-20T00:00:00Z

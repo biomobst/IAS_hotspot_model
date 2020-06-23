@@ -1,0 +1,19 @@
+gbifID;species;occurrenceStatus;decimalLatitude;decimalLongitude;coordinateUncertaintyInMeters;depth;depthAccuracy;eventDate
+1066290860;Marsupenaeus japonicus;present;-21.395;149.955;50;31.6;;2004-09-28T00:00:00Z
+2265765446;Marsupenaeus japonicus;present;32.54;130.41;;;;2008-07-02T11:30:00Z
+2311162654;Marsupenaeus japonicus;present;18.55;72.54;;;;2011-12-16T00:00:00Z
+1675574247;Marsupenaeus japonicus;present;16.887267;42.423783;;;;2014-11-01T00:00:00Z
+2309511449;Marsupenaeus japonicus;present;55.8;42.1;;;;2017-07-27T00:00:00Z
+2311201602;Marsupenaeus japonicus;present;22.97;-57.34;;;;2017-09-17T00:00:00Z
+2306082997;Marsupenaeus japonicus;present;22.97;-57.34;;;;2017-09-17T00:00:00Z
+2447827879;Marsupenaeus japonicus;present;18.949509;72.818779;;;;2018-09-20T16:34:44Z
+2491344274;Marsupenaeus japonicus;present;43.03429;3.06135;5000;;;
+1851994355;Marsupenaeus japonicus;present;-28.801215;32.060392;;;;
+1851993942;Marsupenaeus japonicus;present;-28.801215;32.060392;;;;
+1851993587;Marsupenaeus japonicus;present;-28.801215;32.060392;;;;
+90244290;Marsupenaeus japonicus;present;0;0;;;;
+1066277443;Marsupenaeus japonicus;present;12;101;;;;
+1676003325;Marsupenaeus japonicus;present;16.887267;42.423783;;;;
+57194013;Marsupenaeus japonicus;present;22.6;69.5;;;;
+2013252843;Marsupenaeus japonicus;present;33.443617;134.279167;;;;
+1587290683;Marsupenaeus japonicus;present;49.48245;0.112225;;6;;
