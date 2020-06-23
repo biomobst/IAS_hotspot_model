@@ -4,7 +4,7 @@
 https://github.com/biomobst/IAS_model/blob/master/input%20data/IASmodelling_speciesList_20200107.csv
 
 ### Occurence records
-https://github.com/biomobst/IAS_model/tree/master/results/Training%20points
+https://github.com/biomobst/IAS_model/tree/master/input%20data/Training%20points
 
 ### Envrionmental data layers at 5 arc-min resolution
 Data layers for Temperature, Salinity, Currents velocity, Sea ice concentration, Nitrate, Phosphate, Dissolved molecular oxygen, Chlorophyll, Phytoplankton, Primary productivity, and pH can be downloaded at http://www.bio-oracle.ugent.be/
