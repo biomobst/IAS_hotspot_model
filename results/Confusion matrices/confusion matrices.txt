@@ -1,0 +1,172 @@
+Out of Bag error (OUB). How many of the presence and absence cases in the data are classified correctly or oncorrectly when classified with forests where they were not part of the training set.
+
+Classification is made using class weights specified…
+ [1] "########################"
+[1] ""
+[1] "Arcuatula senhousia"
+        absent present  class.error
+absent    5227       2 0.0003824823
+present      3     552 0.0054054054
+[1] "########################"
+[1] ""
+[1] "Austrominius modestus"
+        absent present class.error
+absent    5191      66  0.01255469
+present     50    2352  0.02081599
+[1] "########################"
+[1] ""
+[1] "Bugula neritina"
+        absent present class.error
+absent    5243      39 0.007383567
+present     49     989 0.047206166
+[1] "########################"
+[1] ""
+[1] "Cancer irroratus"
+        absent present  class.error
+absent    5226       3 0.0005737235
+present      8     883 0.0089786756
+[1] "########################"
+[1] ""
+[1] "Chaetoceros seiracanthus"
+        absent present class.error
+absent    5229       0  0.00000000
+present      2      51  0.03773585
+[1] "########################"
+[1] ""
+[1] "Conchoderma auritum"
+        absent present class.error
+absent    5229       0   0.0000000
+present     13      11   0.5416667
+[1] "########################"
+[1] ""
+[1] "Dissodinium pseudocalani"
+        absent present class.error
+absent    5229       0        0.00
+present      2       6        0.25
+[1] "########################"
+[1] ""
+[1] "Fibrocapsa japonica"
+        absent present  class.error
+absent    5226       3 0.0005737235
+present     11     217 0.0482456140
+[1] "########################"
+[1] ""
+[1] "Ficopomatus enigmaticus"
+        absent present class.error
+absent    5314      14 0.002627628
+present     32     249 0.113879004
+[1] "########################"
+[1] ""
+[1] "Mytilopsis leucophaeata"
+        absent present  class.error
+absent    5225       4 0.0007649646
+present      5     147 0.0328947368
+[1] "########################"
+[1] ""
+[1] "Neogobius melanostomus"
+        absent present class.error
+absent    5205      24 0.004589788
+present     27    1995 0.013353116
+[1] "########################"
+[1] ""
+[1] "Ocenebra inornata"
+        absent present  class.error
+absent    5226       3 0.0005737235
+present      7      41 0.1458333333
+[1] "########################"
+[1] ""
+[1] "Palaemon macrodactylus"
+        absent present class.error
+absent    5223       6 0.001147447
+present      8     126 0.059701493
+[1] "########################"
+[1] ""
+[1] "Penaeus japonicus"
+        absent present class.error
+absent    5229       0        0.00
+present      4      12        0.25
+[1] "########################"
+[1] ""
+[1] "Rangia cuneata"
+        absent present  class.error
+absent    5228       1 0.0001912412
+present      4     291 0.0135593220
+[1] "########################"
+[1] ""
+[1] "Rapana venosa"
+        absent present  class.error
+absent    5224       5 0.0009562058
+present     18      79 0.1855670103
+[1] "########################"
+[1] ""
+[1] "Rhithropanopeus harrisii"
+        absent present class.error
+absent    5221       8 0.001529929
+present     15     558 0.026178010
+[1] "########################"
+[1] ""
+[1] "Ruditapes philippinarum"
+        absent present class.error
+absent    5209      20 0.003824823
+present     20    1468 0.013440860
+[1] "########################"
+[1] ""
+[1] "Undaria pinnatifida"
+        absent present class.error
+absent    5279      63  0.01179334
+present     35     612  0.05409583
+[1] "########################"
+[1] ""
+[1] "Urosalpinx cinerea"
+        absent present class.error
+absent    5236       7 0.001335113
+present     14     323 0.041543027
+[1] "########################"
+[1] ""
+[1] "Acipenser gueldenstaedtii"
+        absent present  class.error
+absent    5228       1 0.0001912412
+present      7       4 0.6363636364
+[1] "########################"
+[1] ""
+[1] "Alexandrium ostenfeldii"
+        absent present class.error
+absent    5221       8 0.001529929
+present     20     322 0.058479532
+[1] "########################"
+[1] ""
+[1] "Alexandrium tamarense"
+        absent present class.error
+absent    5204      25 0.004781029
+present     55     925 0.056122449
+[1] "########################"
+[1] ""
+[1] "Amphibalanus eburneus"
+        absent present  class.error
+absent    5227       2 0.0003824823
+present      8      98 0.0754716981
+[1] "########################"
+[1] ""
+[1] "Asterias amurensis"
+        absent present class.error
+absent    5229       0  0.00000000
+present     13     120  0.09774436
+[1] "########################"
+[1] ""
+[1] "Hydroides dianthus"
+        absent present class.error
+absent    5229       0   0.0000000
+present     13      50   0.2063492
+[1] "########################"
+[1] ""
+[1] "Styela clava"
+        absent present class.error
+absent    5201      92  0.01738145
+present     43    1763  0.02380952
+[1] "########################"
+[1] ""
+[1] "Thalassiosira punctigera"
+        absent present  class.error
+absent    5228       1 0.0001912412
+present      6     130 0.0441176471
+
