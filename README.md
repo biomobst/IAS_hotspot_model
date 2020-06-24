@@ -12,6 +12,12 @@ SDMs are based on a machine learning algorithm (Random Forest) and analyze the c
 
 The workflow was built under the commission of the Swedish Agency for Marine and Water Management (SwAM)” and is formally part of the report **“Provtagningsdesign med omdrev för övervakning av främmande arter enligt eRAS”** by Marine Monitoring AB, Senalytics AB, and the Swedish National Veterinary Institute.
 
+## Method description
+
+Modeling of invasive hotspots was carried out using species distribution models (SDM) and a workflow that was developed to identify potential high-risk areas for the establishment and spread of invasive arteries in Swedish water.
+
+The SDM workflow we used in this study is based on a modeling workflows developed by University of Gothenburg (Leidenberger et al. 2015; Laugen et al. 2015; Stelzer et al. 2013; Karlsson et al. 2019) and can be adapted to specific questions such as in this study or for modelling freshwater invasion hotspots. Here we applied the workflow to model a large number of known invasive species that have not yet established themselves in Sweden, so-called "door knocker species". The models' results not only identify potential areas of distribution for each individual species, but can also be used to map regions where suitable habitats for a large number of invasive species overlap. These superimposed maps can be further integrated with data on invasive behavior for each individual species as well as with introduction risk related to  shipping routes and oceanographic currents. These regions identified to have a high overall invasion risk (i.e. high risk of both introduction and establishment) can be then considered invasive hotspots.
+
 ## References
 
 Karlsson R, Obst M, Berggren M (2019) Analysis of potential distribution and impacts for two species of alien crabs in Northern Europé Biological Invasions. https://link.springer.com/article/10.1007/s10530-019-02044-3
