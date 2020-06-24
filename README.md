@@ -2,7 +2,7 @@
 
 ## Summary 
 
-<img src=images/frontpage3.jpg width=400 align=right>
+<img src=images/frontpage3.jpg width=500 align=right>
 
 The scrpts in the repo are designed to use species distribution models (SDM) to identify potential high-risk areas for the introduction, establishment and spread of invasive arteries in Swedish water. The SDM workflow is based on a modeling workflows developed by University of Gothenburg (Leidenberger et al. 2015; Laugen et al. 2015; Stelzer et al. 2013; Karlsson et al. 2019) and was further adapted to model a large number of known invasive species that have not yet established themselves in Sweden, so-called "door knocker species". The models' results not only identify potential areas of distribution for each individual species, but can also be used to map regions where suitable habitats for a large number of invasive species overlap. These superimposed maps are then further integrated with external data layers on introduction vectors such as ship traffic density and oceanographic currents as well as with data on invasive behavior for each individual species. The integration of oceanographic data is however is not yet fully implemented. The regions identified with in this workflow as areas with a high overall invasion risk (i.e. high risk of both introduction and establishment) can be considered invasive hotspots.
 
