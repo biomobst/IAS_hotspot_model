@@ -77,7 +77,7 @@ Range "sum species"
 
 We calculated the overall invasion risk (samlad invasionsrisk) by weighting the predicted probability values from the individual SDM projections before summarising them into group projections. The individual modifications were based on two factors
 
-1. the risk assessment of individual species. Here species with high invasive potential accrding to Strand et al. 2018 (file://hav.havochvatten.se/hav/root/users/erllet/Documents/REF/Strand%20m%20fl_Riskklistan%20ADb%202018.pdf) received higher weight, while species with low invasive potentialreceived less weight (weightfactors 1-5) in the projections of overall invasion risk
+1. the risk assessment of individual species. Here species with high invasive potential accrding to Strand et al. 2018 (https://github.com/biomobst/IAS_hotspot_model#references) received higher weight, while species with low invasive potentialreceived less weight (weightfactors 1-5) in the projections of overall invasion risk
 
 2. the proximity of suitable habitat to ship traffic and oceanographic currents. Here, the score from the SDM model was combined with the ship traffic score into a combined risk score using the formula <to be added>. Prior to this integration, all ship traffic datalayers were normalised to values between 1-10000. 
 
