@@ -414,10 +414,10 @@ writeRaster(custom.pred, filename= newfile, format = "GTiff", suffix='.tif', ove
 
 #######################################
 # customzed combined layers
-#Dessa kartor är nog viktigast. Jag undrar om vi kan få rasterfiler för
-#2. medelvärdet av Log-sannolikheten
+#Dessa kartor â€°r nog viktigast. Jag undrar om vi kan fÃ‚ rasterfiler fË†r
+#2. medelvâ€°rdet av Log-sannolikheten
 #3. summerad Log-sannolikheten
-#4. antal arter över 50%-tröskel delad upp efter 2 grupperingar (group:Environment, group:Salinity) enligt bifogat masterfile (IASmodellng_speciesList)
+#4. antal arter Ë†ver 50%-trË†skel delad upp efter 2 grupperingar (group:Environment, group:Salinity) enligt bifogat masterfile (IASmodellng_speciesList)
 #
 combine.table <-  read.csv2("IASmodelling_speciesList_20200107.csv",header=TRUE, sep=";",stringsAsFactors = F)
 names(combine.table)<- c("Vetenskapligt namn",	"Svenskt namn",	"Source",
@@ -512,7 +512,7 @@ writeRaster(weight.map, filename= newfile, format = "GTiff", suffix='.tif', over
 ####
 }#end all groups
 } #end mode
-#1. antal arter över 50%-tröskel
+#1. antal arter Ë†ver 50%-trË†skel
 
 
 ####################################################################
@@ -603,7 +603,7 @@ dev.off()
 
 ################################################################################
 #                              END                                         #####
-#¤#################################################################################
+#Â§#################################################################################
 ### pca on rasters
 #https://www.rdocumentation.org/packages/RStoolbox/versions/0.2.6/topics/rasterPCA
 library(ggplot2)
