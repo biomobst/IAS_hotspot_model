@@ -50,10 +50,8 @@ All maps are provided as European projections.
 - Phytoplankton (only phytoplankton species)
 - Zooplankton (only zooplankton species)
 - Zoobenthos (only zoobenthos species)
-
-### Weighting  and cutoffs
-
-We calculated weighted and unweighted sums when when summarising the individual projections into group projections. The purpose is to give species different impacts on the grouped maps based on HaV's risk assessment.   
+ 
+### Cutoffs
 
 We also applied different cut-offs and calculated weighted and unweighted sums of species where predicted probability of presence exceeded a threshold of 0.1, 0.33 and 0.5.
 
@@ -73,7 +71,15 @@ group of species defined by environment or salinity group
 EXAMPLE: sum species weighted 0.5 marine environment:
 Sum of species in the group "marine environment". Raster values only included if higher than 0.5 and then multiplied by risk factor for that species.
 
-Range "sum species
+Range "sum species"
+
+### Weighting for overall invasion risk
+
+We calculated the weighted overall invasion risk (samlad invasionsrisk) by modifying the predicted probability of presence for each species (i.e. the SDM projections) before summarising them into group projections. The individual modifications were based on two factors
+
+1. the risk assessment of individual species. Here species with high invasive potential accrding to Strand et al. 2018 (file://hav.havochvatten.se/hav/root/users/erllet/Documents/REF/Strand%20m%20fl_Riskklistan%20ADb%202018.pdf) received higher weight, while species with low invasive potentialreceived less weight (weightfactors 1-5) in the projections of overall invasion risk
+
+2. the proximity of suitable habitat to ship traffic and oceanographic currents. Here, the score from the SDM model was combined with the ship traffic score into a combined risk score using the formula <to be added>. Prior to this integration, all ship traffic datalayers were normalised to values between 1-10000. 
 
 ### Scaling
 
