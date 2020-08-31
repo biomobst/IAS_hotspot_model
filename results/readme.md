@@ -73,7 +73,7 @@ Sum of species in the group "marine environment". Raster values only included if
 
 Range "sum species"
 
-### Weighting for overall invasion risk
+### Overall invasion risk (Weighting of SDM projections)
 
 We calculated the weighted overall invasion risk (samlad invasionsrisk) by modifying the predicted probability of presence for each species (i.e. the SDM projections) before summarising them into group projections. The individual modifications were based on two factors
 
