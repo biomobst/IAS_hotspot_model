@@ -75,7 +75,7 @@ Range "sum species"
 
 ### Overall invasion risk (Weighting of SDM projections)
 
-We calculated the weighted overall invasion risk (samlad invasionsrisk) by modifying the predicted probability of presence for each species (i.e. the SDM projections) before summarising them into group projections. The individual modifications were based on two factors
+We calculated the overall invasion risk (samlad invasionsrisk) by wieghting the predicted probability values of the individual SDM projections before summarising them into group projections. The individual modifications were based on two factors
 
 1. the risk assessment of individual species. Here species with high invasive potential accrding to Strand et al. 2018 (file://hav.havochvatten.se/hav/root/users/erllet/Documents/REF/Strand%20m%20fl_Riskklistan%20ADb%202018.pdf) received higher weight, while species with low invasive potentialreceived less weight (weightfactors 1-5) in the projections of overall invasion risk
 
