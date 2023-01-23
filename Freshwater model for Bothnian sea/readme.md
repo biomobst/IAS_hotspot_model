@@ -26,22 +26,7 @@ In the tables "species stats" and "species stats no chlora" there is species-spe
  
 Information about which files are to be used as input in models for different species is gathered in the file "data.table.csv" which has the following format:
  
-species
-present.data
-absence.data
-pseudoabsence.data
-Elodea nuttallii
-Elodea nuttallii.csv
-Elodea nuttallii.csv
-pseudoabsences.csv
-Nymphoides peltata
-Nymphoides peltata.csv
-Nymphoides peltata.csv
-pseudoabsences.csv
-Pistia stratiotes
-Pistia stratiotes.csv
-Pistia stratiotes.csv
-pseudoabsences.csv
+<img src=images/table.input.png width=500 align=right> 
  
 The script that loads data into the model can use different files for positive and negative findings is a inherited function from the previous project. In this project, positive and negative findings are read from the same file and the same pseudoabsences are used for all species, but it is possible, for example, to enter negative findings manually or have different "background models" for different groups of organisms by choosing different pseudoabsence files.
  
@@ -54,10 +39,11 @@ The "model" used to handle differences in sampling effort is one of the things t
 We downloaded and formatted the following environmental data layers from https://neo.gsfc.nasa.gov/ and generated consistent continental data layers covering land and sea at 5 arcmin resolution for the following variables: Due to problems with downloading the larger files with data in °C and mg/m3 respectively and nonresponsive technical support we instead used the smaller image files with data as 1 byte/pixel in arbitrary units (AU). The classifier used, Random Forests, in a nonlinear model and sets cutoff based on the rank of values. Thus, scaling of data will not change the model and this time-saving shortcut does not impact the predictions. 
  
 Sea surface temperature (SST)
-o   Annual mean SST in AU 
-o   Annual max SST in AU
-o   Annual min SST in AU
-o   Annual amplitude SST in AU
+* Annual mean SST in AU 
+* Annual max SST in AU
+* Annual min SST in AU
+* Annual amplitude SST in AU
+
 Chlorofyll (Chla) 
 o   mean Chla of most productive month in AU 
 o   min Chla of most productive month in in AU
