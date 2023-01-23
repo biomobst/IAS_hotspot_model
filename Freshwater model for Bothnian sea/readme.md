@@ -27,7 +27,8 @@ In the tables "species stats" and "species stats no chlora" there is species-spe
 Information about which files are to be used as input in models for different species is gathered in the file "data.table.csv" which has the following format:
  
 <img src=images/table.input.jpg width=600 align=left> 
- 
+
+/
 The script that loads data into the model can use different files for positive and negative findings is a inherited function from the previous project. In this project, positive and negative findings are read from the same file and the same pseudoabsences are used for all species, but it is possible, for example, to enter negative findings manually or have different "background models" for different groups of organisms by choosing different pseudoabsence files.
  
 The selection of points in the pseudoabsence model has not been filtered to remove duplicates with the same coordinates before sampling. This means that areas with many duplicates may be overrepresented. Filtering of duplicates was not done until the last run, otherwise it would of course have been done here as well.
