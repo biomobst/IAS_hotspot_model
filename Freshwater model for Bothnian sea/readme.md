@@ -24,10 +24,13 @@ From the downloaded data files, cleaned data for 10,000 observations are sampled
  
 In the tables "species stats" and "species stats no chlora" there is species-specific information on the number of finds in GBIF that meet the criteria above, the number of finds with unique coordinates and the number of these for which environmental information is available. Data on chlorophyll is more limited and missing in smaller bodies of water, which is why a model based on data with this variable is based on fewer observations and fewer pseudoabsences. 
  
-Information about which files are to be used as input in models for different species is gathered in the file "data.table.csv" which has the following format:
+Information about which files are to be used as input in models for different species is gathered in the file "data.table.csv" which has the following format: <br />
+<br />
+<br />
  
 <img src=images/table.input.jpg width=800 align=left> 
-<br />
+&nbsp;
+
  
 The script that loads data into the model can use different files for positive and negative findings is a inherited function from the previous project. In this project, positive and negative findings are read from the same file and the same pseudoabsences are used for all species, but it is possible, for example, to enter negative findings manually or have different "background models" for different groups of organisms by choosing different pseudoabsence files.
  
