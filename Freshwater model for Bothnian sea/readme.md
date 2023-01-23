@@ -95,19 +95,25 @@ The filtered data from GBIF is loaded. Duplicates are then filtered out if they 
 ### Preparing iterations 
 The analysis is performed as 5 replicates of a 5x5 cross-validation. For each replicate data are permuted. Then, positive and negative findings are sampled, individually, to belong to one of five possible (other values at the CV level are possible) sets. When an observation is assigned an iteration it means that it will be part of the test set during that iteration of the cross-validation. <br />
 <br />
+
 Since many points are close to each other and would lead to overestimation of predictive power if one allowed nearby points to be included in both the test and training sets, the coordinates are rounded as follows: <br />
 <br />
+
 * lonmin <-   10*floor(my.data$Lon/10)
 * lonmax <-   10*ceiling(my.data$Lon/10)
 * latmin <-   10*floor(2*my.data$Lat/10)/2
 * latmax <-   10*ceiling(2*my.data$Lat/10)/2 <br />
 <br />
+
 and each observation is given an observation area whose name is given by the above. When you then sample data for training and test sets, observation areas are sampled, not individual observations. For some species, all findings ended up in a few observation areas. <br />
 <br />
+
 In order to carry out a 5x cross-validation, there must be findings in at least 5 different areas, otherwise the algorithm crashes. Since a meaningful estimate of predictive power, and also confidence in the maps, is doubtful if the positive findings come from fewer than five areas, such species are excluded. <br />
 <br />
+
 The size of the rasters and the very principle of grouping findings that may be considered too close to each other for meaningful ROC analysis can be debated. <br />
 <br />
+
 Information about the iterations is saved in a .rda file and is then used partly in the variable selection algorithm and partly when the Random Forest model is trained for cross-validation. <br />
 <br />
  
@@ -124,6 +130,7 @@ In part, a plot is made per species that shows the weight of the variables (RI i
 ### Train random forest models
 A model is trained for each sub-dataset according to the file created under “prepare iterations”. For these models, only the "probability that the observation has the status present" is saved for each observation. In addition, a model is trained with the entire input data that is saved and used for spatial prediction. <br />
 <br />
+
 In this implementation, iterations of Random Forests are run sequentially. The time gain of running in parallel on different nodes has not been that great, as the number of variables is small, and it has not been worth the time to modify the script for parallel training of models. However, this could be done easily in the future. <br />
 <br />
  
@@ -146,6 +153,7 @@ For each experiment, a raster stack is made with predicted probability from all 
 ### Plot maps that combine cumulative average probability for all species with traffic layers
 Raster layers with traffic data from 2016 that were used in the previous project (Bergkvist et al 2020) are read in and then the raster map corresponding to average probability is cropped and resampled to the same extent and resolution as the traffic map. The area being analyzed is given by the extent of the map used by Bergkvist et al (2020). <br />
 <br />
+
 A composite plot is made with basically the same code as in the previous project. The plot has four panels with <br />
 <br />
 * Average probability for all species given type of model (with or without chlorophyll and without chlorophyll but only points where chlorophyll data is available)
@@ -156,5 +164,6 @@ A composite plot is made with basically the same code as in the previous project
 ### References
 Kruczyk, M., H. Zetterberg, O. Hansson, S. Rolstad, L. Minthon, A. Wallin, K. Blennow, J. Komorowski and M. G. Andersson (2012). "Monte Carlo feature selection and rule-based models to predict Alzheimer’s disease in mild cognitive impairment." Journal of Neural Transmission 119(7): 821-831. <br />
 <br />
+
 Bergkvist J, Magnusson M, Obst M, Sundberg P, Andersson G (2020) Provtagningsdesign för övervakning av främmande arter. Övervakning i marin miljö. Havs- och vattenmyndighetens rapport 2020:22. ISBN 978-91-88727-86-2 <br />
 <br />
