@@ -47,15 +47,18 @@ Sea surface temperature (SST)
 * Annual min SST in AU
 * Annual amplitude SST in AU <br />
 <br />
+
 Chlorofyll (Chla) 
 * mean Chla of most productive month in AU 
 * min Chla of most productive month in in AU
 * max Chla of most productive month in in AU 
 * amplitude Chla of most productive month in in AU <br />
 <br />
+
 Sea surface salinity (SSC)
 * Annual mean SSS in PSU <br />
 <br />
+
 Layers for SST, Chla, and SSC are processed in the script Prepare environmental layers.HAV2022.r”. We used the source https://neo.gsfc.nasa.gov/archive/geotiff/ for data on Chlorophyll and SST respectively. Files with monthly data were downloaded from the following links:
 https://neo.gsfc.nasa.gov/archive/geotiff/MY1DMM_CHLORA/  for chlorophyll 
 https://neo.gsfc.nasa.gov/archive/geotiff/MYD28M/ for SST<br />
