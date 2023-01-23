@@ -36,6 +36,7 @@ The selection of points in the pseudoabsence model has not been filtered to remo
 <br />
 The "model" used to handle differences in sampling effort is one of the things that can be further developed in the next project. <br />
 <br />
+
 ## Download and formatting of environmental data layers
 
 We downloaded and formatted the following environmental data layers from https://neo.gsfc.nasa.gov/ and generated consistent continental data layers covering land and sea at 5 arcmin resolution for the following variables: Due to problems with downloading the larger files with data in °C and mg/m3 respectively and nonresponsive technical support we instead used the smaller image files with data as 1 byte/pixel in arbitrary units (AU). The classifier used, Random Forests, in a nonlinear model and sets cutoff based on the rank of values. Thus, scaling of data will not change the model and this time-saving shortcut does not impact the predictions. <br />
