@@ -7,24 +7,23 @@ This folder documents the a customisation of the original IAS hotspot model with
 ## Download data from GBIF and pseudoabsences
  
 Species data are downloaded from the input file “valda.arter.4.csv” with the script ”load.from.gbif.r”. Taxon names and Taxon keys are used to download occurrences (occ_download). A link to the data for download is sent to your email. <br />
- 
+<br />
 Data filtration takes place in the scriptet ”gbif.download.check.r” , first by excluding erroneous coordinates with the function clean_coordinates() and thereafter by inspecting observations field ”basisOfRecord” and excluding the following classes: "MACHINE_OBSERVATION", "PRESERVED_SPECIMEN", "FOSSIL_SPECIMEN", "MATERIAL_CITATION"  , "MATERIAL_SAMPLE" , "LIVING_SPECIMEN"). The following  classes were included: "HUMAN_OBSERVATION", "OCCURRENCE", "OBSERVATION". <br />
- 
+<br />
 For each species the cleaned data are saved as.csv file with the following columns: 
 "gbifID","occurrenceID","species", "occurrenceStatus", "decimalLongitude", "decimalLatitude", "coordinateUncertaintyInMeters", "depth", "depthAccuracy","eventDate" <br />
- 
+<br />
 For each species a csv file is generated with the following format 
 write.csv(temp,file = paste(speciespath,s,".csv", sep =""), row.names = F) <br />
- 
+<br />
 In addition to the files, the script creates plots of finds on a world map, partly for each species individually and partly a plot with all species in different colors to give an image of where in the world finds of invasive species have been made. <br />
- 
+<br />
 The last step is to create pseudoabsences for presence-absence modeling. A plot of all downloaded observations (testplot.cleanput.jpg) shows that observations are unevenly distributed globally and that one can assume that there is a greater chance that someone found a species in an area where other species are reported. <br />
 <br />
-
 From the downloaded data files, cleaned data for 10,000 observations are sampled and used as pseudoabsences under the assumption that the distribution of all findings in "cleanput" can be considered a reasonable model for "sampling effort". Of the 10,000 findings, many will, in later stages, turn out to be at points where environmental data is missing, but in total about 1,500 pseudoabsences were useful, which fairly well balanced the positive findings for most species.<br />
- 
+<br />
 In the tables "species stats" and "species stats no chlora" there is species-specific information on the number of finds in GBIF that meet the criteria above, the number of finds with unique coordinates and the number of these for which environmental information is available. Data on chlorophyll is more limited and missing in smaller bodies of water, which is why a model based on data with this variable is based on fewer observations and fewer pseudoabsences. <br />
- 
+<br />
 Information about which files are to be used as input in models for different species is gathered in the file "data.table.csv" which has the following format: <br />
 <br />
 
@@ -35,11 +34,11 @@ Information about which files are to be used as input in models for different sp
 <br />
  
 The script that loads data into the model can use different files for positive and negative findings is a inherited function from the previous project. In this project, positive and negative findings are read from the same file and the same pseudoabsences are used for all species, but it is possible, for example, to enter negative findings manually or have different "background models" for different groups of organisms by choosing different pseudoabsence files. <br />
- 
+<br />
 The selection of points in the pseudoabsence model has not been filtered to remove duplicates with the same coordinates before sampling. This means that areas with many duplicates may be overrepresented. Filtering of duplicates was not done until the last run, otherwise it would of course have been done here as well. <br />
- 
+<br />
 The "model" used to handle differences in sampling effort is one of the things that can be further developed in the next project. <br />
- 
+<br />
 ## Download and formatting of environmental data layers
 
 We downloaded and formatted the following environmental data layers from https://neo.gsfc.nasa.gov/ and generated consistent continental data layers covering land and sea at 5 arcmin resolution for the following variables: Due to problems with downloading the larger files with data in °C and mg/m3 respectively and nonresponsive technical support we instead used the smaller image files with data as 1 byte/pixel in arbitrary units (AU). The classifier used, Random Forests, in a nonlinear model and sets cutoff based on the rank of values. Thus, scaling of data will not change the model and this time-saving shortcut does not impact the predictions. 
