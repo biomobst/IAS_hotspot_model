@@ -26,7 +26,7 @@ In the tables "species stats" and "species stats no chlora" there is species-spe
  
 Information about which files are to be used as input in models for different species is gathered in the file "data.table.csv" which has the following format:
  
-<img src=images/table.input.png width=600 align=left> 
+<img src=images/table.input.jpg width=600 align=left> 
  
 The script that loads data into the model can use different files for positive and negative findings is a inherited function from the previous project. In this project, positive and negative findings are read from the same file and the same pseudoabsences are used for all species, but it is possible, for example, to enter negative findings manually or have different "background models" for different groups of organisms by choosing different pseudoabsence files.
  
@@ -45,12 +45,13 @@ Sea surface temperature (SST)
 * Annual amplitude SST in AU
 
 Chlorofyll (Chla) 
-o   mean Chla of most productive month in AU 
-o   min Chla of most productive month in in AU
-o   max Chla of most productive month in in AU 
-o   amplitude Chla of most productive month in in AU
+* mean Chla of most productive month in AU 
+* min Chla of most productive month in in AU
+* max Chla of most productive month in in AU 
+* amplitude Chla of most productive month in in AU
+
 Sea surface salinity (SSC)
-o   Annual mean SSS in PSU
+* Annual mean SSS in PSU
  
 Layers for SST, Chla, and SSC are processed in the script Prepare environmental layers.HAV2022.r”. We used the source https://neo.gsfc.nasa.gov/archive/geotiff/ for data on Chlorophyll and SST respectively. Files with monthly data were downloaded from the following links:
 https://neo.gsfc.nasa.gov/archive/geotiff/MY1DMM_CHLORA/  for chlorophyll 
@@ -63,17 +64,17 @@ To create a salinity layer we took data for salinity in the oceans from Bio-Orac
 Modellling was performed using the script masterscript.HAV2022.r with help functions library script SEanalytics.functionsNEW.r
  
 The script includes the following steps
-·      Filepaths, filenames, an suffixes
-·      Read present, absent and pseudoabsence points and extract environmental data
-·      Preparing iterations 
-·      Estimate weight of predictors with MCMC algortihm
-·      Make plots of variables’ weight and correlation with species observations
-·      Train random forest models
-·      Extract C50 rules 
-·      Calculate and plot ROC curves from cross validation 
-·      Spatial prediction of species presence and plotting individual maps 
-·      Plot map stacks with average probability
-·      Plot maps that combine cumulative average probability for all species with traffic layers
+* Filepaths, filenames, an suffixes
+* Read present, absent and pseudoabsence points and extract environmental data
+* Preparing iterations 
+* Estimate weight of predictors with MCMC algortihm
+* Make plots of variables’ weight and correlation with species observations
+* Train random forest models
+* Extract C50 rules 
+* Calculate and plot ROC curves from cross validation 
+* Spatial prediction of species presence and plotting individual maps 
+* Plot map stacks with average probability
+* Plot maps that combine cumulative average probability for all species with traffic layers
  
 ### Filepaths, filenames, and suffixes
 For the most important folders, three variants are created with different "suffixes" for results with and without the chlora variable.
@@ -85,10 +86,10 @@ The filtered data from GBIF is loaded. Duplicates are then filtered out if they 
 The analysis is performed as 5 replicates of a 5x5 cross-validation. For each replicate data are permuted. Then, positive and negative findings are sampled, individually, to belong to one of five possible (other values at the CV level are possible) sets. When an observation is assigned an iteration it means that it will be part of the test set during that iteration of the cross-validation.
  
 Since many points are close to each other and would lead to overestimation of predictive power if one allowed nearby points to be included in both the test and training sets, the coordinates are rounded as follows:
-  lonmin <-   10*floor(my.data$Lon/10)
-  lonmax <-   10*ceiling(my.data$Lon/10)
-  latmin <-   10*floor(2*my.data$Lat/10)/2
-  latmax <-   10*ceiling(2*my.data$Lat/10)/2
+* lonmin <-   10*floor(my.data$Lon/10)
+* lonmax <-   10*ceiling(my.data$Lon/10)
+* latmin <-   10*floor(2*my.data$Lat/10)/2
+* latmax <-   10*ceiling(2*my.data$Lat/10)/2
 and each observation is given an observation area whose name is given by the above. When you then sample data for training and test sets, observation areas are sampled, not individual observations. For some species, all findings ended up in a few observation areas.
  
 In order to carry out a 5x cross-validation, there must be findings in at least 5 different areas, otherwise the algorithm crashes. Since a meaningful estimate of predictive power, and also confidence in the maps, is doubtful if the positive findings come from fewer than five areas, such species are excluded.
@@ -127,10 +128,10 @@ Raster layers with traffic data from 2016 that were used in the previous project
  
 A composite plot is made with basically the same code as in the previous project. The plot has four panels with
  
-•               Average probability for all species given type of model (with or without chlorophyll and without chlorophyll but only points where chlorophyll data is available)
-•               Traffic data from 2016. The difference to the previous analysis is that the ceiling for traffic intensity was set to 1000 instead of 10000 (values above the ceiling are set to the ceiling). The reason for truncating high values is that otherwise you don't see the traffic lanes in the Gulf of Bothnia, which are much less intensive than the major waterways in the southern Baltic Sea.
-•               A map where the traffic data is superimposed on the model results with a different color.
-•               A map where traffic data and model results have been added. During the addition, a scale parameter is used which is set arbitrarily so that the traffic lane will appear.
+* Average probability for all species given type of model (with or without chlorophyll and without chlorophyll but only points where chlorophyll data is available)
+* Traffic data from 2016. The difference to the previous analysis is that the ceiling for traffic intensity was set to 1000 instead of 10000 (values above the ceiling are set to the ceiling). The reason for truncating high values is that otherwise you don't see the traffic lanes in the Gulf of Bothnia, which are much less intensive than the major waterways in the southern Baltic Sea.
+* A map where the traffic data is superimposed on the model results with a different color.
+* A map where traffic data and model results have been added. During the addition, a scale parameter is used which is set arbitrarily so that the traffic lane will appear.
  
  
 ### References
