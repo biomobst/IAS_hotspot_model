@@ -116,10 +116,11 @@ The size of the rasters and the very principle of grouping findings that may be 
 
 Information about the iterations is saved in a .rda file and is then used partly in the variable selection algorithm and partly when the Random Forest model is trained for cross-validation. <br />
 <br />
- 
+
 ### Estimate weight of predictors with MCMC algorithm
 The weight of the variables is estimated with MCMC feature selection according to the same principle as in earlier model trials (Kruczyk et al 2012). Since the number of variables is small, however, we do not use the possibility of making a Random Forest model with only significant variables, but MCMC is only used to get a measure of the usefulness of the variables. The MCMC algorithm is run 25 times with different parts of the dataset to get a feel for how sensitive the weight of the variables (RI index) is to the selection of data. However, as the method is implemented, nearby points may be included in the same dataset and the weight of the variables may be affected by overtraining. This should be handled in the next project, for example by filtering out nearby finds. <br />
 <br />
+
 The MCMC algorithm is time-consuming and the 25 iterations are carried out on different nodes with the program package parallel{}. <br />
 <br />
 
@@ -133,7 +134,7 @@ A model is trained for each sub-dataset according to the file created under “p
 
 In this implementation, iterations of Random Forests are run sequentially. The time gain of running in parallel on different nodes has not been that great, as the number of variables is small, and it has not been worth the time to modify the script for parallel training of models. However, this could be done easily in the future. <br />
 <br />
- 
+
 ### Extract C50 rules 
 Test of a simple algorithm to create simple "rules" that describe the relationships between predictor variables and occurrence status. The output of this is saved as a text file for each species. The algorithm can be seen as an attempt to explain what happens inside the "decision trees" even if it is a different decision tree algorithm. The function has been tested without any optimization whatsoever, but it might be interesting to compare with the plots made above and as a "demo" of a track to follow up in future projects. <br />
 <br />
