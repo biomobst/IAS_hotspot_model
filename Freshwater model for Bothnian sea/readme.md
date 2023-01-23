@@ -70,6 +70,7 @@ To create a salinity layer we took data for salinity in the oceans from Bio-Orac
  
 Modellling was performed using the script masterscript.HAV2022.r with help functions library script SEanalytics.functionsNEW.r. The script includes the following steps <br />
 <br />
+
 * Filepaths, filenames, an suffixes
 * Read present, absent and pseudoabsence points and extract environmental data
 * Preparing iterations 
@@ -82,15 +83,15 @@ Modellling was performed using the script masterscript.HAV2022.r with help funct
 * Plot map stacks with average probability
 * Plot maps that combine cumulative average probability for all species with traffic layers <br />
 <br />
- 
+
 ### Filepaths, filenames, and suffixes
 For the most important folders, three variants are created with different "suffixes" for results with and without the chlora variable. <br />
 <br />
- 
+
 ### Read present, absent and pseudoabsence points and extract environmental data
 The filtered data from GBIF is loaded. Duplicates are then filtered out if they have the same coordinates and occurrence status. Next, environmental data is extracted from the raster stack that has the "correct" suffix. Observations without complete environmental data are filtered out. In the loop, a table is also created with statistics for each species on the number of positive and negative findings, including pseudoabsences. Species with fewer than 5 unique, complete, findings are filtered out. <br />
 <br />
- 
+
 ### Preparing iterations 
 The analysis is performed as 5 replicates of a 5x5 cross-validation. For each replicate data are permuted. Then, positive and negative findings are sampled, individually, to belong to one of five possible (other values at the CV level are possible) sets. When an observation is assigned an iteration it means that it will be part of the test set during that iteration of the cross-validation. <br />
 <br />
@@ -99,7 +100,8 @@ Since many points are close to each other and would lead to overestimation of pr
 * lonmin <-   10*floor(my.data$Lon/10)
 * lonmax <-   10*ceiling(my.data$Lon/10)
 * latmin <-   10*floor(2*my.data$Lat/10)/2
-* latmax <-   10*ceiling(2*my.data$Lat/10)/2
+* latmax <-   10*ceiling(2*my.data$Lat/10)/2 <br />
+<br />
 and each observation is given an observation area whose name is given by the above. When you then sample data for training and test sets, observation areas are sampled, not individual observations. For some species, all findings ended up in a few observation areas. <br />
 <br />
 In order to carry out a 5x cross-validation, there must be findings in at least 5 different areas, otherwise the algorithm crashes. Since a meaningful estimate of predictive power, and also confidence in the maps, is doubtful if the positive findings come from fewer than five areas, such species are excluded. <br />
