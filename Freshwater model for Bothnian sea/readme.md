@@ -18,18 +18,24 @@ write.csv(temp,file = paste(speciespath,s,".csv", sep =""), row.names = F)
  
 In addition to the files, the script creates plots of finds on a world map, partly for each species individually and partly a plot with all species in different colors to give an image of where in the world finds of invasive species have been made.
  
-The last step is to create pseudoabsences for presence-absence modeling. A plot of all downloaded observations (testplot.cleanput.jpg) shows that observations are unevenly distributed globally and that one can assume that there is a greater chance that someone found a species in an area where other species are reported. 
+The last step is to create pseudoabsences for presence-absence modeling. A plot of all downloaded observations (testplot.cleanput.jpg) shows that observations are unevenly distributed globally and that one can assume that there is a greater chance that someone found a species in an area where other species are reported. <br />
+<br />
+
  
-From the downloaded data files, cleaned data for 10,000 observations are sampled and used as pseudoabsences under the assumption that the distribution of all findings in "cleanput" can be considered a reasonable model for "sampling effort". Of the 10,000 findings, many will, in later stages, turn out to be at points where environmental data is missing, but in total about 1,500 pseudoabsences were useful, which fairly well balanced the positive findings for most species.
+From the downloaded data files, cleaned data for 10,000 observations are sampled and used as pseudoabsences under the assumption that the distribution of all findings in "cleanput" can be considered a reasonable model for "sampling effort". Of the 10,000 findings, many will, in later stages, turn out to be at points where environmental data is missing, but in total about 1,500 pseudoabsences were useful, which fairly well balanced the positive findings for most species.<br />
  
 In the tables "species stats" and "species stats no chlora" there is species-specific information on the number of finds in GBIF that meet the criteria above, the number of finds with unique coordinates and the number of these for which environmental information is available. Data on chlorophyll is more limited and missing in smaller bodies of water, which is why a model based on data with this variable is based on fewer observations and fewer pseudoabsences. 
  
 Information about which files are to be used as input in models for different species is gathered in the file "data.table.csv" which has the following format: <br />
 <br />
 <br />
+<br />
+<br />
+<br />
+<br />
  
 <img src=images/table.input.jpg width=800 align=left> 
-&nbsp;
+
 
  
 The script that loads data into the model can use different files for positive and negative findings is a inherited function from the previous project. In this project, positive and negative findings are read from the same file and the same pseudoabsences are used for all species, but it is possible, for example, to enter negative findings manually or have different "background models" for different groups of organisms by choosing different pseudoabsence files.
