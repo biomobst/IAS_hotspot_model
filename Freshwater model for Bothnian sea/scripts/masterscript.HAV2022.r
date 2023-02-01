@@ -280,6 +280,8 @@ if(mcmc){
 #Species <-Data.table$species[1]){
 lista.rda<- Sys.glob(paste(Iterations.path,"*.rda",sep="/"))
 lista.selection <- Sys.glob(paste(selectionspath,"*.rda",sep="/"))
+indata.path = Outpath # This line and next needed only if this part of the script is run separate from rest
+lista.csv<- Sys.glob(paste(indata.path,"*.csv",sep="/"))
 
 for(Species in Data.table$species[-exclude]){
   my.data <- read.csv(lista.csv[grep(Species,lista.csv)],header=T, sep=",")
@@ -353,7 +355,9 @@ for(Species in Data.table$species[-exclude]){
     response <- as.factor(my.data$occurrenceStatus)
     #hist(predictor)
     unique(response)
-    temptab <- cbind(predictor,response)
+    #temptab <- cbind(predictor,response) # this will make the first class in alphabet as class 1, that is "absent"
+    temptab <- cbind(predictor,ifelse(response== "present",1,2))# new puts "present" as class 1
+    colnames(temptab)[2]<- "response"# add colname 
     temptab[,"response"]
     
     temptab <- as.data.frame(temptab)
@@ -379,8 +383,9 @@ for(Species in Data.table$species[-exclude]){
     
     xbreaks <- c(table[,"minx"], max(table[,"maxx"])  )
     betweenbreaks <- unlist( sapply(1:(length(xbreaks)-1), function(b) mean(xbreaks[b:(b+1)])) )
-    breaklabels <-   unlist( sapply(1:(length(xbreaks)-1), function(b) paste(xbreaks[b:(b+1)], collapse = "-"   )  ) )
-    
+    #breaklabels <-   unlist( sapply(1:(length(xbreaks)-1), function(b) paste(xbreaks[b:(b+1)], collapse = "-"   )  ) )
+    breaklabels <-   unlist( sapply(1:(length(xbreaks)-1), function(b) paste(round(xbreaks[b:(b+1)],1), collapse = "-"   )  ) )#rounds labels
+
     plot(table[,"meanx"],table[,"meany"]*100, xlim= c(min(table[,"minx"]), max(table[,"maxx"]) ), ylim=c(0,ymax),
          xlab= "", ylab="presence (%)", axes = F)
     title(main= paste(Species,my.var), cex.main = 0.7)
@@ -396,7 +401,7 @@ for(Species in Data.table$species[-exclude]){
     text(x=betweenbreaks, y=par()$usr[3]-0.02*(par()$usr[4]-par()$usr[3]),
          labels=breaklabels, srt=45, adj=1, xpd=TRUE, cex=0.7)
     #text(x=c(min(table[,"minx"]), max(table[,"maxx"]) ), y=par()$usr[3]-0.02*(par()$usr[4]-par()$usr[3]),
-    #     labels=c(min(table[,"minx"]), max(table[,"maxx"]) ), srt=45, adj=1, xpd=TRUE, cex=0.7)
+    #     labels=c(min(table[,"minx"]), max(table[,"maxx"]) ), srt=45, adj=1, xpd=TRUE, cex=0.8)
     
     lines(table[,"meanx"],table[,"meany"]*100, lty=2)
   }
