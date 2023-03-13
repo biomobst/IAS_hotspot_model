@@ -8,6 +8,8 @@ The scripts in this repo are designed to use species distribution models (SDM) t
 
 The workflow for running the analysis is written in R and was built under the commission of the Swedish Agency for Marine and Water Management (SwAM). It is formally part of the report **“Provtagningsdesign med omdrev för övervakning av främmande arter enligt eRAS”** by Marine Monitoring AB, Senalytics AB, and the Swedish National Veterinary Institute. The repo also contains all input and output data from the original experiments. Here is the link to the report: https://www.havochvatten.se/data-kartor-och-rapporter/rapporter-och-andra-publikationer/publikationer/2020-10-09-provtagningsdesign-for-overvakning-av-frammande-arter.html
 
+We also customised of the original IAS hotspot model to predict suitable habitat in the northern Baltic Sea for invasive species originating from freshwater systems, i.e. lakes and rivers. This model is documented in the folder "Freshwater model for Bothnian sea" above.
+
 ## References
 
 Karlsson R, Obst M, Berggren M (2019) Analysis of potential distribution and impacts for two species of alien crabs in Northern Europé Biological Invasions. https://link.springer.com/article/10.1007/s10530-019-02044-3
