@@ -6,7 +6,7 @@ This table contains the information on the species included in the study at this
 
 ## FOLDER: Maps SPECIES 
 
-This folder contains all individual SDM results (species level) as PNG files. The maps showi suitable habitat for each species as European projection (name.Eur.png) and Swedish projection (name.Swe.png).
+This folder contains all individual SDM results (species level) as PNG files. The maps show suitable habitat for each species as European projection (name.Eur.png) and Swedish projection (name.Swe.png).
 
 The scale is linear from white to dark brown, with 0 indicating lowest probability to find suitable habitat, and 1 indicating highest  probability to find suitable habitat. 
 
