@@ -43,29 +43,7 @@ The selection of points in the pseudoabsence model has not been filtered to remo
 
 We downloaded and formatted the following environmental data layers from Bio-Oracle (https://www.bio-oracle.org) usign the script access biooracle.r and generated consistent data layers at 0.05 degrees resolution for all available variables:
 
-nos_mean_depthsurf
-chl_mean_depthsurf 02_max_depthsurf po4_mean_depthsurf
-thetao_min_depthsurf par_mean_mean_depthsurf
-02_mean_depthsurf phyc_mean_depthsurf
-thetao_mean_depthsurf thetao_max_depthsurf ph_mean_depthsurf
-02_min
-depthsurf
-ph_mean_depthmean
-si_mean_depthsurt
-02_max_depthmax
-02_mean_depthmax
-02_min_depthmax phyc_mean_depthmean
-thetao_mean_depthmean
-die_mean_depthsurl
-so_mean_depthmean
-02_mean_depthmean po4_mean_depthmean
-so_mean_depthsurl
-RANDOMVAR3
-RANDOMVAR
-sws_mean_depthsurf
-RANDOMVAR2
-siconc_mean_depthsurf
-sithick_ mean_depthsurf siconc_max_depthsurf
+nos_mean_depthsurf, chl_mean_depthsurf, 02_max_depthsurf, po4_mean_depthsurf, thetao_min_depthsurf, par_mean_mean_depthsurf, 02_mean_depthsurf, phyc_mean_depthsurf, thetao_mean_depthsurf, thetao_max_depthsurf, ph_mean_depthsurf, 02_min, depthsurf, ph_mean_depthmean, si_mean_depthsurt, 02_max_depthmax, 02_mean_depthmax, 02_min_depthmax, phyc_mean_depthmean, thetao_mean_depthmean, die_mean_depthsurl, so_mean_depthmean, 02_mean_depthmean, po4_mean_depthmean, so_mean_depthsurl, RANDOMVAR3, RANDOMVAR, sws_mean_depthsurf, RANDOMVAR2, siconc_mean_depthsurf, sithick_, mean_depthsurf, siconc_max_depthsurf
 
 ## Model test and projection
 
