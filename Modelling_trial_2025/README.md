@@ -29,10 +29,11 @@ In the tables "species stats" there is species-specific information on the numbe
 
 Information about which files are to be used as input in models for different species is gathered in the file "data.table.2025.csv" which has the following format:
 
-__species__	__present.data__	__absence.data__	__pseudoabsence.data__
-Elodea nuttallii	Elodea nuttallii.csv	Elodea nuttallii.csv	pseudoabsences.csv
-Nymphoides peltata	Nymphoides peltata.csv	Nymphoides peltata.csv	pseudoabsences.csv
-Pistia stratiotes	Pistia stratiotes.csv	Pistia stratiotes.csv	pseudoabsences.csv
+| __species__ | __present.data__ | __absence.data__ | __pseudoabsence.data__ |
+| -------- | ------- |------- |------- |
+Elodea nuttallii | Elodea nuttallii.csv |	Elodea nuttallii.csv| pseudoabsences.csv
+Nymphoides peltata |	Nymphoides peltata.csv | Nymphoides peltata.csv |	pseudoabsences.csv
+Pistia stratiotes	| Pistia stratiotes.csv |	Pistia stratiotes.csv |	pseudoabsences.csv
 
 The script that loads data into the model can use different files for positive and negative findings is a inherited function from the mother project (IAS_model). In this project, positive and negative findings are read from the same file and the same pseudoabsences are used for all species, but it is possible, for example, to enter negative findings manually or have different "background models" for different groups of organisms by choosing different pseudoabsence files.
 
