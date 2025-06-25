@@ -71,11 +71,11 @@ The filtered data from GBIF is loaded. Duplicates are then filtered out if they 
 Preparing iterations 
 The analysis is performed as 5 replicates of a 5x5 cross-validation. For each replicate data are permuted. Then, positive and negative findings are sampled, individually, to belong to one of five possible (other values at the CV level are possible) sets, which corresponds to the iteration in the cross-validation when this finding is to constitute the test set.
 
-Since many points are close to each other and would lead to overestimation of predictive power if one allowed nearby points to be included in both the test and training sets, the coordinates are rounded as follows:
-  lonmin <-   10*floor(my.data$Lon/10)
-  lonmax <-   10*ceiling(my.data$Lon/10)
-  latmin <-   10*floor(2*my.data$Lat/10)/2
-  latmax <-   10*ceiling(2*my.data$Lat/10)/2
+Since many points are close to each other and would lead to overestimation of predictive power if one allowed nearby points to be included in both the test and training sets, the coordinates are rounded as follows:<br />
+  lonmin <-   10*floor(my.data$Lon/10) <br />
+  lonmax <-   10*ceiling(my.data$Lon/10) <br />
+  latmin <-   10*floor(2*my.data$Lat/10)/2 <br />
+  latmax <-   10*ceiling(2*my.data$Lat/10)/2 <br />
 and each observation is given an observation area whose name is given by the above. When you then sample data for training and test sets, observation areas are sampled, not individual observations. For some species, all findings ended up in a few observation areas.
 
 In order to carry out a 5x cross-validation, there must be findings in at least 5 different areas, otherwise the algorithm crashes. Since a meaningful estimate of predictive power, and also confidence in the maps, is doubtful if the positive findings come from fewer than five areas, such species are filtered out.
@@ -108,13 +108,15 @@ ROC curves are calculated based on the Random Forest simulations above. The curv
 
 The Random Forest model trained with the entire dataset is used for prediction with a raster stack corresponding to the data used to train the model. The results are first saved as .rda files and, in a later step, as GeoTIFF. There is room here to make the script more uniform and skip the first step.
 
-Plot map stacks with average probability
+Plot maps stacks with average probability
 
 Maps are produced for the climate scenario SSP119 with four projections
 Upper left: pprojection of suitable habitat in current climate
 Upper right: projection of suitable habitat using 2050 climate
 Lower left:pprojection of suitable habitat using 2100 climate
 Lower right: pprojection of the difference in suitable habitat between 2010 and current climate
+
+Currently known distribution is shown in plots with presence (red dots) anpseudo-absence (blue triangles) points
 
 ### References
 
