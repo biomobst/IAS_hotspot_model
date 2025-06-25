@@ -110,7 +110,7 @@ The Random Forest model trained with the entire dataset is used for prediction w
 
 Plot map stacks with average probability
 
-Mpas are produced for each future SSP scenario (SSP119, SSP126, SSP370, SSP585). Each scenario map contains 4 projections
+Maps are produced for the climate scenario SSP119 with four projections
 Upper left: pprojection of suitable habitat in current climate
 Upper right: projection of suitable habitat using 2050 climate
 Lower left:pprojection of suitable habitat using 2100 climate
