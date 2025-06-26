@@ -41,7 +41,7 @@ The selection of points in the pseudoabsence model has not been filtered to remo
 
 ## Download and formatting of environmental data layers
 
-We downloaded and formatted the following environmental data layers from Bio-Oracle (https://www.bio-oracle.org) usign the script access biooracle.r and generated consistent data layers at 0.05 degrees resolution for all available variables:
+We downloaded and formatted the following environmental data layers from Bio-Oracle (https://www.bio-oracle.org) usign the script access biooracle.r and generated consistent data layers at 0.05 degrees resolution for all available variables and for current and future climate scenario SP119:
 
 nos_mean_depthsurf, chl_mean_depthsurf, 02_max_depthsurf, po4_mean_depthsurf, thetao_min_depthsurf, par_mean_mean_depthsurf, 02_mean_depthsurf, phyc_mean_depthsurf, thetao_mean_depthsurf, thetao_max_depthsurf, ph_mean_depthsurf, 02_min, depthsurf, ph_mean_depthmean, si_mean_depthsurt, 02_max_depthmax, 02_mean_depthmax, 02_min_depthmax, phyc_mean_depthmean, thetao_mean_depthmean, die_mean_depthsurl, so_mean_depthmean, 02_mean_depthmean, po4_mean_depthmean, so_mean_depthsurl, RANDOMVAR3, RANDOMVAR, sws_mean_depthsurf, RANDOMVAR2, siconc_mean_depthsurf, sithick_, mean_depthsurf, siconc_max_depthsurf
 
@@ -49,18 +49,18 @@ nos_mean_depthsurf, chl_mean_depthsurf, 02_max_depthsurf, po4_mean_depthsurf, th
 
 Modelling was performed using the script modelisation.teet.GA.R, projection&forecasting.mod.R, and projection&forecasting.R with help functions library script SEanalytics.functions2025.r
 
-The script includes the following steps
-•	Filepaths, filenames, an suffixes
-•	Read present, absent and pseudoabsence points and extract environmental data
-•	Preparing iterations 
-•	Estimate weight of predictors with MCMC algortihm
-•	Make plots of variables’ weight and correlation with species observations
-•	Train random forest models
-•	Extract C50 rules 
-•	Calculate and plot ROC curves from cross validation 
-•	Spatial prediction of species presence and plotting individual maps 
-•	Plot map stacks with average probability
-•	Plot maps that combine cumulative average probability for all species with traffic layers
+The script includes the following steps <br />
+•	Filepaths, filenames, an suffixes <br />
+•	Read present, absent and pseudoabsence points and extract environmental data <br />
+•	Preparing iterations <br />
+•	Estimate weight of predictors with MCMC algortihm <br />
+•	Make plots of variables’ weight and correlation with species observations <br />
+•	Train random forest models <br />
+•	Extract C50 rules  <br />
+•	Calculate and plot ROC curves from cross validation  <br />
+•	Spatial prediction of species presence and plotting individual maps  <br />
+•	Plot map stacks with average probability <br />
+•	Plot maps that combine cumulative average probability for all species with traffic layers <br />
 
 Filepaths, filenames, an suffixes
 For the most important folders, three variants are created with different "suffixes" for results with and without the chlora variable.
@@ -101,9 +101,6 @@ Extract C50 rules
 Test of a simple algorithm to create simple "rules" that describe the relationships between predictor variables and occurrence status. The output of this is saved as a text file for each species. The algorithm can be seen as an attempt to explain what happens inside the "decision trees" even if it is a different decision tree algorithm. The function has been tested without any optimization whatsoever, but it might be interesting to compare with the plots made above and as a "demo" of a track to follow up in future projects.
 
 Calculate and plot ROC curves from cross validation 
-ROC kurvor beräknas baserat från Random Forest förningarna ovan. Kurvorna baseras på den sannolikhet som predikerats för varje observation när den utgjorde testdata, och alltså med en modell som inte bygger på punkter i denna rektangel. Eftersom Random Forest algoritmen körts i 5 repetitioner av en 5x korsvalidering får 5 ROC kurvor med olika AUC. Alla fem kurvorna visas som en linje i plotten och medelkurvan som en grön polygon. Hur stor skillnad det är mellan AUC värdena från olika repetitioner ger en indikation på hur känslig modellen är för data.
-
-Spatial prediction of species presence and plotting individual maps (Sweden and global)
 ROC curves are calculated based on the Random Forest simulations above. The curves are based on the probability predicted for each observation when it constituted the test data, and thus with a model not based on points in this rectangle. Since the Random Forest algorithm was run in 5 repetitions of a 5x cross-validation, 5 ROC curves with different AUCs are obtained. All five curves are shown as a line in the plot and the average curve as a green polygon. How much difference there is between the AUC values from different repetitions gives an indication of how sensitive the model is to the data.
 
 The Random Forest model trained with the entire dataset is used for prediction with a raster stack corresponding to the data used to train the model. The results are first saved as .rda files and, in a later step, as GeoTIFF. There is room here to make the script more uniform and skip the first step.
