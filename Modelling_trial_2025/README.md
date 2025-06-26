@@ -62,13 +62,13 @@ The script includes the following steps <br />
 •	Plot map stacks with average probability <br />
 •	Plot maps that combine cumulative average probability for all species with traffic layers <br />
 
-Filepaths, filenames, an suffixes
+### Filepaths, filenames, an suffixes
 For the most important folders, three variants are created with different "suffixes" for results with and without the chlora variable.
 
 Read present, absent and pseudoabsence points and extract environmental data
 The filtered data from GBIF is loaded. Duplicates are then filtered out if they have the same coordinates and occurrence status. Next, environmental data is extracted from the raster stack that has the "correct" suffix. Observations without complete environmental data are filtered out. In the loop, a table is also created with statistics for each species on the number of positive and negative findings, including pseudoabsences. Species with fewer than 5 unique, complete, findings are filtered out.
 
-Preparing iterations 
+### Preparing iterations
 The analysis is performed as 5 replicates of a 5x5 cross-validation. For each replicate data are permuted. Then, positive and negative findings are sampled, individually, to belong to one of five possible (other values at the CV level are possible) sets, which corresponds to the iteration in the cross-validation when this finding is to constitute the test set.
 
 Since many points are close to each other and would lead to overestimation of predictive power if one allowed nearby points to be included in both the test and training sets, the coordinates are rounded as follows:<br />
@@ -84,28 +84,28 @@ The size of the rasters and the very principle of grouping findings that may be 
 
 Information about the iterations is saved in a .rda file and is then used partly in the variable selection algorithm and partly when the Random Forest model is trained for cross-validation.
 
-Estimate weight of predictors with MCMC algorithm
+### Estimate weight of predictors with MCMC algorithm
 The weight of the variables is estimated with MCMC feature selection according to the same principle as in earlier model trials by Bergkvist et al (2020). Since the number of variables is small, however, we do not use the possibility of making a Random Forest model with only significant variables, but MCMC is only used to get a measure of the usefulness of the variables. The MCMC algorithm is run 25 times with different parts of the dataset to get a feel for how sensitive the weight of the variables (RI index) is to the selection of data. However, as the method is implemented, nearby points may be included in the same dataset and the weight of the variables may be affected by overtraining. This should be handled in the next project, for example by filtering out nearby finds.
 
 The MCMC algorithm is time-consuming and the 25 iterations are carried out on different nodes with the program package parallel{}.
 
-Make plots of variables’ weight and correlation with species observations 
+### Make plots of variables’ weight and correlation with species observations 
 In part, a plot is made per species that shows the weight of the variables (RI index). A couple of random variables have been added to the model to prevent it from crashing. In the plot, a horizontal line has been inserted corresponding to the RI index that the model considers to be "better than chance". In addition, plots are made for each variable where x is the measured value of the predictor variable divided into 10 equally sized "bins" and the axis is the proportion of positive findings given that x lies in this bin.
 
-Train random forest models
+### Train random forest models
 A model is trained for each sub-dataset according to the file created under “prepare iterations”. For these models, only the "probability that the observation has the status present" is saved for each observation. In addition, a model is trained with the entire input data that is saved and used for spatial prediction.
 
 In this implementation, Random Forests are run sequentially. The time gain of running in parallel on different nodes has not been that great, as the number of variables is small, and it has not been worth the time to modify the script for parallel training of models. However, this could be done easily in the future. 
 
-Extract C50 rules 
+### Extract C50 rules 
 Test of a simple algorithm to create simple "rules" that describe the relationships between predictor variables and occurrence status. The output of this is saved as a text file for each species. The algorithm can be seen as an attempt to explain what happens inside the "decision trees" even if it is a different decision tree algorithm. The function has been tested without any optimization whatsoever, but it might be interesting to compare with the plots made above and as a "demo" of a track to follow up in future projects.
 
-Calculate and plot ROC curves from cross validation 
+### Calculate and plot ROC curves from cross validation 
 ROC curves are calculated based on the Random Forest simulations above. The curves are based on the probability predicted for each observation when it constituted the test data, and thus with a model not based on points in this rectangle. Since the Random Forest algorithm was run in 5 repetitions of a 5x cross-validation, 5 ROC curves with different AUCs are obtained. All five curves are shown as a line in the plot and the average curve as a green polygon. How much difference there is between the AUC values from different repetitions gives an indication of how sensitive the model is to the data.
 
 The Random Forest model trained with the entire dataset is used for prediction with a raster stack corresponding to the data used to train the model. The results are first saved as .rda files and, in a later step, as GeoTIFF. There is room here to make the script more uniform and skip the first step.
 
-Plot maps stacks with average probability
+### Plot maps for climate scenario SSP119 
 
 Maps are produced for the climate scenario SSP119 with four projections
 Upper left: pprojection of suitable habitat in current climate
