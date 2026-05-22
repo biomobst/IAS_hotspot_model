@@ -12,6 +12,8 @@ The original IAS hotspot model was expanded to predict suitable habitat in the n
 
 ## References
 
+Pagnier J, Andermann T, Andersson M, Obst, M (2026) The role of genetic observatory networks in the detection and forecasting of marine non-indigenous species, PREPRINT (Version 1) available at Research Square [https://doi.org/10.21203/rs.3.rs-8702791/v1]
+
 Obst M, Andersson G (2023) Hotspot modell för invasiva arter i Bottniska viken - Övervakning i marin miljö. SeAnalytics rapport 2023-03. På uppdrag av Havs- och vattenmyndigheten.
 
 Bergkvist J, Magnusson M, Obst M, Sundberg P, Andersson G (2020) Provtagningsdesign för övervakning av främmande arter. Övervakning i marin miljö. Havs- och vattenmyndighetens rapport 2020:22. ISBN 978-91-88727-86-2
